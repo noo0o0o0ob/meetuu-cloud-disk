@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OSS 内网读写测试</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">oss.meetuu.top</p>
+        <h1>OSS 内网读写测试</h1>
+        <p class="intro">
+          浏览器访问轻量服务器，服务器通过成都 OSS 内网 Endpoint 读取或上传对象，再把结果返回给浏览器。
+        </p>
+      </section>
+
+      <section class="grid">
+        <section class="panel">
+          <h2>读取测试</h2>
+          <form class="reader" id="readerForm">
+            <label for="objectKey">OSS object key</label>
+            <div class="inputRow">
+              <input id="objectKey" name="key" value="Test.txt" autocomplete="off">
+              <button type="submit">读取</button>
+            </div>
+          </form>
+
+          <div class="quick">
+            <button type="button" data-key="Test.txt">Test.txt</button>
+            <button type="button" data-key="server/20231205_155928.png">测试图片</button>
+          </div>
+
+          <div class="status" id="status">等待读取</div>
+          <pre class="output" id="textOutput"></pre>
+          <img class="preview" id="imagePreview" alt="OSS 图片预览">
+        </section>
+
+        <section class="panel">
+          <h2>上传测试</h2>
+          <form class="uploader" id="uploadForm">
+            <label for="fileInput">选择文件</label>
+            <input id="fileInput" name="file" type="file">
+            <button type="submit">上传到 OSS</button>
+          </form>
+
+          <div class="status" id="uploadStatus">等待上传</div>
+          <pre class="output" id="uploadOutput"></pre>
+        </section>
+      </section>
+
+      <section class="facts">
+        <div>
+          <span>Bucket</span>
+          <strong>dynoob123</strong>
+        </div>
+        <div>
+          <span>Endpoint</span>
+          <strong>oss-cn-chengdu-internal.aliyuncs.com</strong>
+        </div>
+        <div>
+          <span>Backend</span>
+          <strong>Express /api/oss /api/upload</strong>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

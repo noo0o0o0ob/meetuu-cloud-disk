@@ -1,0 +1,11 @@
+node_modules/
+dist/
+data/
+*.db
+*.db-journal
+*.sqlite
+.env
+*.log
+test-*.uusama
+*.conf
+*.php
