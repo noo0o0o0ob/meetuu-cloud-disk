@@ -9,3 +9,4 @@ data/
 test-*.uusama
 *.conf
 *.php
+ecosystem.config.js
